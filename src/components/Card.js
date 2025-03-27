@@ -5,10 +5,9 @@
 
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import Form from '@/components/Form';
-
 import Card from 'react-bootstrap/Card';
 import { deleteFact } from '../api/facts';
+import FormPage from './Form';
 
 function FactCard({ fact, deleteFunc }) {
   const [localFact, setLocalFact] = useState(fact);
@@ -24,7 +23,7 @@ function FactCard({ fact, deleteFunc }) {
         {editMode ? (
           <>
             <p>Edit Mode</p>
-            <Form obj={localFact} func={setLocalFact} />
+            <FormPage obj={localFact} func={setLocalFact} />
             <div>
               <button className="btn btn-success" onClick={() => setEditMode(false)}>
                 Exit Edit Mode
